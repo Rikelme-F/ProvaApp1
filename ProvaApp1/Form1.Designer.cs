@@ -32,20 +32,21 @@
             Telefone = new Label();
             txtTelefone = new TextBox();
             btnSalvar = new Button();
+            label1 = new Label();
             SuspendLayout();
-        
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(144, 169);
+            txtNome.Location = new Point(165, 167);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(196, 23);
             txtNome.TabIndex = 1;
+            txtNome.TextChanged += txtNome_TextChanged;
             // 
             // Telefone
             // 
             Telefone.AutoSize = true;
-            Telefone.Location = new Point(144, 214);
+            Telefone.Location = new Point(165, 214);
             Telefone.Name = "Telefone";
             Telefone.Size = new Size(51, 15);
             Telefone.TabIndex = 2;
@@ -53,14 +54,14 @@
             // 
             // txtTelefone
             // 
-            txtTelefone.Location = new Point(144, 232);
+            txtTelefone.Location = new Point(165, 232);
             txtTelefone.Name = "txtTelefone";
-            txtTelefone.Size = new Size(100, 23);
+            txtTelefone.Size = new Size(196, 23);
             txtTelefone.TabIndex = 3;
             // 
             // btnSalvar
             // 
-            btnSalvar.Location = new Point(169, 272);
+            btnSalvar.Location = new Point(227, 279);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(75, 23);
             btnSalvar.TabIndex = 4;
@@ -68,11 +69,21 @@
             btnSalvar.UseVisualStyleBackColor = true;
             btnSalvar.Click += btnSalvar_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(165, 149);
+            label1.Name = "label1";
+            label1.Size = new Size(40, 15);
+            label1.TabIndex = 5;
+            label1.Text = "Nome";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label1);
             Controls.Add(btnSalvar);
             Controls.Add(txtTelefone);
             Controls.Add(Telefone);
@@ -89,5 +100,6 @@
         private Label Telefone;
         private TextBox txtTelefone;
         private Button btnSalvar;
+        private Label label1;
     }
 }

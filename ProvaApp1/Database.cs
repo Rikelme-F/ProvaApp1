@@ -43,8 +43,26 @@ namespace ProvaApp1
                 Console.WriteLine("Erro: " + ex.Message);
                 return false;
             }
+
+        }
+        public static bool ExisteTelefone(string telefone)
+        {
+            string stringDeConexao = "Server=localhost;Port=3306;User Id=root;database=ti_113_windowsforms;";
+            using (var connection = new MySqlConnection(stringDeConexao))
+            {
+                connection.Open();
+
+                string query = "SELECT COUNT(*) FROM usuarios WHERE telefone = @telefone";
+                using (var command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@telefone", telefone);
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    return count > 0;
+                }
+            }
         }
     }
+
 }
 
 
